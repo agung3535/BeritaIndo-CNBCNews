@@ -106,7 +106,6 @@ class NetworkManager {
             urlRequest = createRequestQuery(urlPath: urlPath, parameterQuery: parameterQuery)
         case .none:
             urlRequest = createRequest(urlPath: urlPath)
-            print("urlRequest none = \(urlRequest)")
         }
     
         

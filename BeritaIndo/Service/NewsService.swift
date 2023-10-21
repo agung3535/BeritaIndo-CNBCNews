@@ -30,7 +30,6 @@ class NewsService: NewsServiceProtocol {
                     completion(.failure(.decodeFailure))
                 }
             case .failure(let error):
-                print("error failure = \(error)")
                 completion(.failure(error))
             }
         }
@@ -77,10 +76,7 @@ class NewsService: NewsServiceProtocol {
                     compeltion(.failure(.invalidResponse))
                     return
                 }
-                if let jsonString = String(data: result, encoding: .utf8) {
-                    print("jsonString = \(jsonString)")
-                }
-                print("result = \(result.description)")
+                
                 do {
                     let resource = try JSONDecoder().decode(AllNewsResponse.self, from: result)
                     compeltion(.success(resource.data.cnbcNews.listType))
