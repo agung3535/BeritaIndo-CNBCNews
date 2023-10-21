@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vjh-ev-ewZ">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="BeritaIndo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e8M-vf-2ha">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e8M-vf-2ha" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1o3-m7-wez"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e8M-vf-2ha" secondAttribute="trailing" id="ZxD-qG-ErY"/>
+                            <constraint firstItem="e8M-vf-2ha" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xR4-74-gpQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e8M-vf-2ha" secondAttribute="bottom" id="yj1-k5-a0q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2ep-Yl-LzL"/>
+                    <connections>
+                        <outlet property="newsTable" destination="e8M-vf-2ha" id="EoZ-NA-1qD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052.6717557251909" y="3.5211267605633805"/>
+        </scene>
+        <!--Article Detail View Controller-->
+        <scene sceneID="wEi-nE-ltw">
+            <objects>
+                <viewController storyboardIdentifier="ArticleDetail" id="6WQ-mK-Ks4" customClass="ArticleDetailViewController" customModule="BeritaIndo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bxc-Qm-kud">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V03-wo-YUU">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="WJT-ax-YiW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Senyum! Emiten Ini Cuan Gede hingga 75%, Punya Kamu?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05O-bM-9X9">
+                                <rect key="frame" x="10" y="310" width="373" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berikut saham yang paling cuan dan terboncos sepanjang pekan ini." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfh-Bt-eGx">
+                                <rect key="frame" x="10" y="360.66666666666669" width="373" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published at: Sabtu, 14 Oktober 2023, 6:11 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS3-GE-4L6">
+                                <rect key="frame" x="10" y="421.33333333333331" width="373" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60919744320000002" green="0.60919744320000002" blue="0.60919744320000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V71-kg-ca2">
+                                <rect key="frame" x="10" y="462.33333333333331" width="373" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60919744320000002" green="0.60919744320000002" blue="0.60919744320000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1p-mb-E5y">
+                                <rect key="frame" x="10" y="503.33333333333326" width="183" height="35"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Selengkapnya"/>
+                                <connections>
+                                    <action selector="btnSelengkapnyaAc:" destination="6WQ-mK-Ks4" eventType="touchUpInside" id="aGG-eJ-8dW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uIQ-UV-Irh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V03-wo-YUU" firstAttribute="top" secondItem="Bxc-Qm-kud" secondAttribute="top" id="281-7q-dmN"/>
+                            <constraint firstItem="G1p-mb-E5y" firstAttribute="leading" secondItem="uIQ-UV-Irh" secondAttribute="leading" constant="10" id="3C0-OX-SBy"/>
+                            <constraint firstItem="G1p-mb-E5y" firstAttribute="top" secondItem="V71-kg-ca2" secondAttribute="bottom" constant="20" id="5dq-4B-KHF"/>
+                            <constraint firstItem="XS3-GE-4L6" firstAttribute="leading" secondItem="uIQ-UV-Irh" secondAttribute="leading" constant="10" id="5lP-r9-hVN"/>
+                            <constraint firstItem="V03-wo-YUU" firstAttribute="leading" secondItem="uIQ-UV-Irh" secondAttribute="leading" id="74T-fe-Qg1"/>
+                            <constraint firstItem="05O-bM-9X9" firstAttribute="leading" secondItem="uIQ-UV-Irh" secondAttribute="leading" constant="10" id="7v0-gU-RJ9"/>
+                            <constraint firstItem="uIQ-UV-Irh" firstAttribute="trailing" secondItem="V71-kg-ca2" secondAttribute="trailing" constant="10" id="EYg-Wl-KDg"/>
+                            <constraint firstItem="Vfh-Bt-eGx" firstAttribute="top" secondItem="05O-bM-9X9" secondAttribute="bottom" constant="10" id="Ezl-vu-fEM"/>
+                            <constraint firstItem="XS3-GE-4L6" firstAttribute="top" secondItem="Vfh-Bt-eGx" secondAttribute="bottom" constant="20" id="KBJ-4q-yzt"/>
+                            <constraint firstItem="uIQ-UV-Irh" firstAttribute="trailing" secondItem="V03-wo-YUU" secondAttribute="trailing" id="Nm7-Qc-06e"/>
+                            <constraint firstItem="uIQ-UV-Irh" firstAttribute="trailing" secondItem="05O-bM-9X9" secondAttribute="trailing" constant="10" id="SFa-dp-5Ag"/>
+                            <constraint firstItem="V71-kg-ca2" firstAttribute="top" secondItem="XS3-GE-4L6" secondAttribute="bottom" constant="20" id="WPN-8a-Tz8"/>
+                            <constraint firstItem="uIQ-UV-Irh" firstAttribute="trailing" secondItem="G1p-mb-E5y" secondAttribute="trailing" constant="200" id="afH-s3-Jqo"/>
+                            <constraint firstItem="uIQ-UV-Irh" firstAttribute="trailing" secondItem="Vfh-Bt-eGx" secondAttribute="trailing" constant="10" id="cIs-q7-RTf"/>
+                            <constraint firstItem="05O-bM-9X9" firstAttribute="top" secondItem="V03-wo-YUU" secondAttribute="bottom" constant="10" id="eKU-fk-hWt"/>
+                            <constraint firstItem="V71-kg-ca2" firstAttribute="leading" secondItem="uIQ-UV-Irh" secondAttribute="leading" constant="10" id="fQV-Em-rtD"/>
+                            <constraint firstItem="uIQ-UV-Irh" firstAttribute="trailing" secondItem="XS3-GE-4L6" secondAttribute="trailing" constant="10" id="pex-46-xV0"/>
+                            <constraint firstItem="uIQ-UV-Irh" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="G1p-mb-E5y" secondAttribute="bottom" constant="279.67000000000002" id="rN0-e1-3cx"/>
+                            <constraint firstItem="Vfh-Bt-eGx" firstAttribute="leading" secondItem="uIQ-UV-Irh" secondAttribute="leading" constant="10" id="sKd-0N-32Y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2lh-tE-H2A">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left.circle.fill" catalog="system" id="OCt-zk-LeL">
+                            <color key="tintColor" red="0.91764706370000004" green="0.26666668059999998" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="backButton:" destination="6WQ-mK-Ks4" id="FKt-hm-BLo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="articleImage" destination="V03-wo-YUU" id="m31-dH-pEM"/>
+                        <outlet property="articleTitle" destination="05O-bM-9X9" id="8H8-bv-j27"/>
+                        <outlet property="barItem" destination="OCt-zk-LeL" id="ect-TM-pfO"/>
+                        <outlet property="btnSelengkapnya" destination="G1p-mb-E5y" id="VGi-OF-O2c"/>
+                        <outlet property="categoryLbl" destination="V71-kg-ca2" id="IpF-cn-LH7"/>
+                        <outlet property="dateLbl" destination="XS3-GE-4L6" id="8Zq-WJ-wuj"/>
+                        <outlet property="descriptionLbl" destination="Vfh-Bt-eGx" id="Mip-QV-Y5z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jr-dO-X9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="4"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MSR-9x-Zvm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vjh-ev-ewZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8WF-Kr-QcE">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lNi-es-iJF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J0o-lf-KD5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.95419847328243" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left.circle.fill" catalog="system" width="128" height="123"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
