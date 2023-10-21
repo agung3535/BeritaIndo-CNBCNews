@@ -70,6 +70,7 @@ class NewsViewmodel {
             switch result {
             case .success(let success):
                 self.category = success
+                self.category.insert("all", at: 0)
             case .failure(let failure):
                 self.errorCategory?(failure)
             }

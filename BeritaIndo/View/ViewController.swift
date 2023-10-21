@@ -88,17 +88,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return (cell2.frame.height * CGFloat(vm.news.count))
         }
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let scrollViewHeight = scrollView.frame.size.height
-
-        if contentOffsetY >= contentHeight - scrollViewHeight {
-            
-        }
-    }
-    
    
     
 }
@@ -114,7 +103,12 @@ extension ViewController: NewsListProtocol {
     
     
     func updateSelectedCategory(data: String) {
-        vm.getNewsByCategory(data: data)
+        if data != "all" {
+            vm.getNewsByCategory(data: data)
+        }else {
+            vm.getNews()
+        }
+        
     }
     
     
