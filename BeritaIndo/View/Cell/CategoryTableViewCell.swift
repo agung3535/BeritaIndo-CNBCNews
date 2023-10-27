@@ -59,6 +59,11 @@ extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.contentScaleFactor, height: collectionView.frame.height / 1)
+    }
+
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCat = indexPath.row
         collectionView.reloadData()

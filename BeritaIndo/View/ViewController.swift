@@ -33,11 +33,11 @@ class ViewController: UIViewController {
         
         
         vm.newsListUpdate = { [weak self] in
-            self?.newsTable.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .automatic)
+            self?.newsTable.reloadSections(IndexSet(integer: 1), with: .automatic)
         }
         
         vm.categoryList = { [weak self] in
-            self?.newsTable.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+            self?.newsTable.reloadSections(IndexSet(integer: 0), with: .automatic)
         }
         
      
@@ -54,12 +54,23 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sectionHome.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch sectionHome[section].section {
+
+        case .category:
+            return vm.category.count > 0 ? 1 : 0
+        case .newsList:
+            return vm.news.count
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch sectionHome[indexPath.row].section {
+        switch sectionHome[indexPath.section].section {
         case .category:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as? CategoryTableViewCell else {
                 return UITableViewCell()
@@ -68,25 +79,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setupCategory(data: vm.category)
             return cell
         case .newsList:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsListTableViewCell.identifier, for: indexPath) as? NewsListTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as? NewsTableViewCell else {
                 return UITableViewCell()
             }
-            cell.protocolCell = self
-            cell.setupNews(data: vm.news)
+            cell.setupNews(data: vm.news[indexPath.row])
             return cell
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        switch sectionHome[indexPath.row].section {
-        case .category:
-            return 50
-        default:
-            let cell2 = newsTable.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier) as! NewsTableViewCell
-            
-            return (cell2.frame.height * CGFloat(vm.news.count))
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigateTo(Id: "ArticleDetail" , data: vm.news[indexPath.row])
     }
    
     
@@ -95,7 +97,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 extension ViewController: NewsListProtocol {
     func navigateTo(Id: String, data: CNBCNewsResource) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "ArticleDetail") as? ArticleDetailViewController {
+        if let vc = storyboard.instantiateViewController(withIdentifier: Id) as? ArticleDetailViewController {
             vc.data = data
             self.navigationController?.pushViewController(vc, animated: true)
         }
